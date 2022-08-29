@@ -1,11 +1,18 @@
-﻿//Задача 23
-//Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
-//3 -> 1, 8, 27
-//5 -> 1, 8, 27, 64, 125
-try {
-    Console.Write("Введите число: ");
-    int n = Convert.ToInt32(Console.ReadLine());
-    for (int i = 1; i <= n; i++) Console.Write(i*i*i + ", ");
+﻿// Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+//14212 -> нет
+//12821 -> да
+//23432 -> да
+string isPalindrom(int s)
+{   
+    string newString = s.ToString();
+    for (int i = 0; i < newString.Length / 2; ++i)
+        if (newString[i] != newString[newString.Length - 1 - i]) return "Нет";
+    return "Да";
 }
-catch { Console.Write("Введите число!"); }
+
+Console.Write(isPalindrom(14212));
+Console.WriteLine();
+Console.Write(isPalindrom(12821));
+Console.WriteLine();
+Console.Write(isPalindrom(23432));
 
